@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>폼 요소 알아보기</h1>
+	
+	<!-- method = "get | post" 요청방식
+	생략하면 기본이  get방식
+	
+	get방식 : url 주소에 정보가 노출 - select 전용
+	post방식 : url주소가 깔끔하게, 정보는 request body 저장 - insert 전용
+	
+	
+	ex)get방식 형식 -> querystring
+	url주소?name=value&name&...
+	http://localhost:8000/step01_html/ex06_object.
+	html?name=%BF%B5%C1%D8&pwd=&hobby=2&hobby=5&gender=%B3%B2&job=%B0%B3%B9%DF%C0%DA
+	&content=%A4%B1%A4%A4%A4%B7%A4%A9
+	
+	
+	action = "submit"이 될때 이동할 주소
+	생략하면 기본이 현재 페이지 리로드
+	novalidate를 사용할경우 유효성 체크를 하지않고 바로 넘어간다.
+	 -->
+	<form method="post" action="ex06_object.html" novalidate="novalidate">
+	<!-- 모든 폼 요소는 name속성이 있고 name이 있어야만 전소될 때 서버측에
+	name = value로 값이 전송될 수 있다.
+	required는 유효성 체크로 입력 받지 않으면 입력하라는 메세지 출력
+	 -->
+	이름 : <input type="text" name="name" maxlength="5" value="영준" autofocus="autofocus" required="required"><br>
+
+	<!-- readonly vs disabled
+	readonly는 읽기전용으로 입력은 안되지만 전송하면 값 전송된다.
+	disabled는 비활성화로 입력도 안되고 전송도 안된다.
+	 -->
+	아이디 : <input type="text" name="id" value="young" disabled="disabled"><br>
+	
+	<!-- password value값이 안들어감 
+	name은 중복 가능하지만 id는 중복불가능
+	placeholder는 힌트를 주는 느낌
+	-->
+	<label for="pass">패스워드</label> : <input type="password" name="pwd" id="pass" placeholder="암호를 입력해" >
+	
+	<fieldset>
+		<legend>취미</legend>
+		<!-- 멀티 선택이 가능한 폼 요소 - checkbox 
+		name의 값은 같아도 달라도 상관없지만 name을 동일하게 주면 backend나 자바스크립트에서 배열로 처리 가능하다
+		-->
+		<input type="checkbox" name="hobby" value="1">등산
+		<input type="checkbox" name="hobby" value="2" checked="checked">수영
+		<input type="checkbox" name="hobby" value="3">낚시
+		<input type="checkbox" name="hobby" value="4">골프
+		<input type="checkbox" name="hobby" value="5" checked="checked">놀고먹기
+	</fieldset>
+	
+	
+	
+	
+	<fieldset>
+		<legend>성별</legend>
+		<!-- 단일선택 : radio name의 값이 같아야만 그중에 하나만 선택된다 -->
+		<input type="radio" name="gender" value="남" checked="checked">남
+		<input type="radio" name="gender" value="여">여
+	</fieldset>
+	
+	<br>
+	
+	직업선택 : 
+	<select name="job" size="3" multiple="multiple">
+		<option value="0">선택</option>
+		<option value="학생">학생</option>
+		<option value="백수">백수</option>
+		<option value="백조">백조</option>
+		<option value="개발자" selected="selected">개발자</option>
+		<option value="디자이너">디자이너</option>
+	</select>
+	
+	<br><br><br>
+	
+	
+	내용 : 
+	<textarea rows="5" cols="20" name="content" placeholder="내용을 입력하세요"></textarea>
+	<br><br>
+	
+	
+	
+	<!-- button종류 -->
+	<input type="button" value="클릭해봐">
+	<input type="submit" value="가입">
+	<input type="reset" value="취소">
+	<br><br>
+	<input type="image" src="./images/레드향.png"> <!-- submit과 동일 -->
+	
+	<br><br>
+	
+	
+		<hr>
+	
+	<h3>html5에 추가된 폼 속성들</h3>
+	<input type="date" min="2024-07-09" max="2024-10-15">
+	<input type="month">
+	<input type="week"><br><br>
+	
+	
+	<input type="number" min="0" max="5"><br><br>
+	<input type="email" required="required"><br><br>
+	<input type="color"><br><br>
+	<input type="range"><br><br>
+	
+	
+	
+	<!-- type 생략 가능 -->
+	<button type="button">클릭</button>
+	<button type="submit">전송</button>
+	<button type="reset">취소</button>
+	
+	<button>폼 안에 있으면 type="submit"</button>
+	
+	
+	<!-- 보이지는 않지만 내부적으로 name에 해당하는 value를 전송하고 싶을 때 hidden  -->
+	<input type="hidden" name="state" value="yes">
+	<input type="hidden" name="flag" value="true">
+	<input type="hidden" name="pageNo" value="3">
+	
+	<!-- type="file"인 경우 반드시 method="post"방식이어야 한다. -->
+	<hr>
+	파일첨부 : <input type="file" name="file">
+	
+	
+	
+	</form>
+	
+	<hr>
+	
+	<button>폼이 없으면 type="button"</button>
+	
+	
+</body>
+</html>
