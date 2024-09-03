@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+<style>
+	/*
+	여기영역은 CSS영역입니다.
+	
+	selector {속성:value; ...}
+	*/
+	h3{color: red; background-color: yellow;}
+	h3,h2{font-family: 궁서체; text-decoration: underline;}
+	
+	/*2. id적용하기 = #이름 */
+	#a{font-style: italic;}
+	#b{text-shadow: 3px 5px green}
+	
+	/*3. class 적용하기 = .이름 */ 
+	.a{padding: 20px;border: double 3px blue;}
+	.b{border-radius: 15px}
+	
+	*{color: blue;}
+	
+	/*element의 하위(자식) 노드 찾기
+		ex) div>p{}는 div태그의 자식 찾기
+		ex) div p{}는 div 태그의 모든 하위(자손들)찾기
+	*/
+	/*div>p{background-color: pink;}*/
+	
+	div p{background-color: green;}
+	
+	
+	/*속성으로 찾기= [attribute] */
+	[type]{border: 5px red double;}
+	[type=text]{background-color: pink;}
+	
+	/* ~로 시작하는^, ~로 끝나는$, ~를 포함*/
+	[name$=d]{font-size: 30px;}
+	
+	table{
+		width: 500px; height: 400px; 
+		border: 1px solid green;
+		border-collapse: collapse;
+	}
+	
+	td{
+		border: 1px solid gray;
+		text-align: center;
+	}
+	
+	table tr td:first-child {
+		width: 100px;
+		color: red;
+}
+
+	table tr td:last-child {
+		width: 50px;
+}
+
+	table tr:nth-child(2n+1) {
+		background-color: orange;
+}
+	table tr:nth-child(1) {
+		background-color: skyblue;
+		color: white;
+		font-size: 20px;
+		font-weight: bold;
+}
+	
+	
+</style>
+</head>
+<body>
+
+	<h3 class="a b">css 적용방법 - internalWay</h3>
+	
+	<h2>css 적용방법 - internalWay</h2>
+	
+	<h3 id="a">css 적용방법ddd - internalWay</h3>
+	
+	<div class="a">안녕하세요</div>
+	
+	
+	<hr>
+	<h1>Demo of the element > element selector</h1>
+	
+	<div>
+		<h2>My name is donald</h2>
+		<p>I live in duckburg</p>
+	</div>
+
+	<form action="" method="get">
+		이름 : <input type="text" name="name"><br>
+		비번 : <input type="password" name="password" ><br>
+	</form>
+	
+	<hr>
+	
+	<table>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>1</td>	
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+  </table>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+</body>
+</html>

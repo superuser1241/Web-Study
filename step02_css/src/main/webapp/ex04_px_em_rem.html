@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+	
+	body{
+		height: 400px;
+	}
+	
+	.a{
+		background-color: skyblue;
+		width: 50vw; height: 50vh;
+		font-size: 32px;
+	}
+	.b{
+		background-color: pink;
+		font-size: 2em; /* em 단위 부모노드 기준 */
+	}
+	.c{
+		background-color: orange;
+		font-size: 1rem; /* rem root단위 * 1rem 기준 */
+	}
+	.d{
+		background-color: yellow;
+		font-size: 28px;
+	}
+</style>
+
+</head>
+<body>
+<!-- 브라우저의 기본 폰트 크기는 16px -->
+<div class="a">
+	px vs em vs rem
+	<div class="b">em: 부모 노드를 기준으로</div>
+	<div class="c">rem: root노드를 기준으로</div>
+	<div class="d">px: 해상도를 기준으로</div>
+</div>
+
+</body>
+</html>

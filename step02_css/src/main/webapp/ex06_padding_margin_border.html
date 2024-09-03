@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+	div{width: 150px; height: 150px;}
+	
+	.a{
+		background-color: red;
+		margin: 5px;  /* 상,하,좌,우 */
+		/*padding: 10px 20px;*/  /* 상하, 좌우 */
+		padding: 20px 30px 10px; /* 상, 좌우, 하 */
+	}
+	.b{
+		background-color: green;
+		margin-top: 10px;
+		margin-left: 50px;
+		margin-bottom: 20px;
+	}
+	.c{ 
+		background-color: blue;
+		border-color: red;
+		border-width: 5px 3px 10px 15px;
+		border-style: dashed dotted double;
+		/*border-radius: 150px 75px 25px;*/
+		border-radius: 150px;
+		text-align: center;
+		/* 수직정렬 -- display:table-cell 변경 */
+		/*vertical-align: middle;*/
+		
+		/* vertical-align 대신에 align-content: center 쓰면 수직정렬된다*/
+		align-content: center;
+	}
+
+</style>
+
+</head>
+<body>
+	<div class="a">margin padding border 알아보기</div>
+	<div class="b">margin padding border 알아보기</div>
+	<div class="c">margin padding</div>
+</body>
+</html>

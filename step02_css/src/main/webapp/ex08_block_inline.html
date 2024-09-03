@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+div{width: 200px; height: 100px;}
+.a{background-color: red;}
+.b{
+	background-color: green;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	margin-left: 30px;
+}
+.c{background-color: blue;}
+
+/* display:in-line인 경우 width, height, margin-top, margin-bottom은 적용안됨 */
+span{width: 200px; height: 50px;}
+#a{background-color: red;}
+#b{
+	background-color: green;
+	margin-top: 50px;
+	margin-bottom: 30px;
+	margin-left: 20px;
+	margin-right: 30px;
+	display: inline-block;
+}
+#c{background-color: blue;}
+
+</style>
+
+</head>
+<body>
+	<div class="a">div1</div>
+	<div class="b">div2</div>
+	<div class="c">div3</div>
+	<hr>
+	<span id="a">span1</span>
+	<span id="b">span2</span>
+	<span id="c">span3</span>
+	
+	<div class="c">ㅎㅇ</div>
+</body>
+</html>

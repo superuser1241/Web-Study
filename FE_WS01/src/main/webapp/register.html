@@ -7,11 +7,12 @@
 <body>
 	<form method="post">
 	<h1>Register</h1>
-	이름 : <input type="text" name="name" required="required"><br>
-	이메일 : <input type="email" name="email" required="required"><br>
-	연락처 : <input type="tel" name="phonNumber" required="required"><br>
-	비밀번호 : <input type="password" name="pwd" required="required"><br>
-	비밀번호 확인 : <input type="password" name="pwdCheck" required="required"><br>
+	<!-- label for=""는 input의 id와 같아야만 전송가능 -->
+	<label for="name">이름</label> : <input type="text" id="name" name="name" required="required"><br>
+	<label for="email">이메일</label> : <input type="email" id="email" name="email" required="required"><br>
+	<label for="phonNumber">연락처</label> : <input type="tel" id="phonNumber" name="phonNumber" required="required"><br>
+	<label for="pwd">비밀번호</label> : <input type="password" id="pwd" name="pwd" required="required"><br>
+	<label for="pwdCheck">비밀번호 확인</label> : <input type="password" id="pwdCheck" name="pwdCheck" required="required"><br>
 	<hr>
 	<button type="submit">회원가입</button>
 	</form>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+div{width: 200px; height: 100px;}
+.a{background-color: red;}
+
+/* 
+	box-sizing: border-box;로 설정하면 width,height를 유지하고 그안에서
+	padding border가 적용된다.
+*/
+
+.b{
+	background-color: skyblue;
+	padding: 20px;
+	border: blue double 10px;
+	box-sizing: border-box;
+}
+
+
+</style>
+</head>
+<body>
+	<div class="a">안녕1</div>
+	<div class="b">안녕2</div>
+
+</body>
+</html>

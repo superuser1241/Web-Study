@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+	form{
+		border: 2px solid black;
+	}
+	button{text-align: center;}
+
+	#signup input[type=text],input[type=tel]{
+		border: 1px solid #ccc;
+		border-radius: 3px;
+		padding: 5px;
+		width: 200px;
+	}
+
+	#signup input:not([type=radio]) {
+		border: 1px solid #ccc;
+		border-radius: 3px;
+		padding: 5px;
+		width: 200px;
+}
+</style>
+</head>
+<body>
+<form action="" id="signup">
+	<fieldset>
+        <legend>개인 정보</legend>
+        이름: <input type="text" name="name" id="name"><br>
+        <label for="password">패스워드: <input type="password" name="password" id="password"></label>
+    </fieldset>
+    
+    <fieldset>
+        <legend>객실 형태</legend>
+        <ul>
+            <li>
+                <input type="radio" name="room" id="basic">
+                <label for="basic">기본형(최대 2인)</label>
+            </li>
+            <li>
+                <input type="radio" name="room" id="family">
+                <label for="family">가족형(최대 8인)</label>
+            </li>
+        </ul>
+    </fieldset>
+    
+    <button type="submit">제출</button>
+</form>
+</body>
+</html>
