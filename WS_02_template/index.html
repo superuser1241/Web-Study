@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT's KOSTA</title>
+  <link rel="stylesheet" type="text/css" href="css/navbar.css">
+  <link rel="stylesheet" type="text/css" href="css/footer.css">
+  <link rel="stylesheet" type="text/css" href="css/common.css">
+  <style>
+    #main{
+      height: 60vh;
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      grid-auto-rows: 300px;
+      gap: 10px;
+    }
+    
+    img{
+      width: 100%;
+      height: 80%;
+    }
+    .b1{
+      text-align: right;
+    }
+    .b2{
+      text-align: right;
+    }
+    .b3{
+      text-align: right;
+    }
+    
+  </style>
+  
+</head>
+<body>
+  <div id="container">
+    
+    <nav id="navbar">
+    <!-- 5개의 메뉴생성 -->
+      <ul>
+        <li class="nav-item logo"><a href="index.html"><img src="images/logo.jpg" alt="로고입니다." ></a></li>
+        <li class="nav-item"> <a href="personal.html">개인</a></li>
+        <li class="nav-item"><a href="busines.html">기업</a></li>
+        <li class="nav-item"><a href="login.html">로그인</a></li>
+        <li class="nav-item"><a href="register.html">회원가입</a></li>
+      </ul>
+    </nav>
+    
+    <div id="banner">지금 당신의 행복! IT's KOSTA Life!</div> 
+    
+    <div id="main">
+    
+     <!-- 총 3개의 서브영역 -->
+      <div class="main-item">
+        <img src="https://picsum.photos/200" alt="">
+         <h2>main-item 1</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <div class="b1"><button>button 1</button></div>
+      </div>
+      
+      <div class="main-item">
+        <img src="https://picsum.photos/200" alt="">
+         <h2>main-item 2</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <div class="b2"><button>button 2</button></div>
+      </div>
+      
+      <div class="main-item">
+        <img src="https://picsum.photos/200" alt="">
+        <h2>main-item 3</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <div class="b3"><button>button 3</button></div>
+      </div>
+      
+   </div>
+    
+     <footer>
+      <ul>
+        <li>경기도 오리역 한국소프트웨어진흥협회</li>
+        <li>02-0000-0000</li>
+      </ul>
+    </footer>
+    
+  </div>
+  
+</body>
+</html>

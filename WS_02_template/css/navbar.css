@@ -1,0 +1,15 @@
+#navbar>ul{
+    background-color: skyblue;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style-type: none;
+    gap: 0px 10px;
+  }
+  .nav-item{
+    align-content: center;
+  }
+  a{
+    text-decoration: none;
+  }
+

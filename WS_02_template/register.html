@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT's KOSTA - register</title>
+  <link rel="stylesheet" type="text/css" href="css/navbar.css">
+  <link rel="stylesheet" type="text/css" href="css/footer.css">
+  <link rel="stylesheet" type="text/css" href="css/common.css">
+
+  <style>
+	h1{
+      text-align: center;
+    }
+	form{
+      border: 0.5px black solid;
+    }
+    .form-item label{
+		display: inline-block;
+      width: 120px;
+    }
+	.a{
+		text-align: right;
+	}
+  </style>
+  
+</head>
+<body>
+<div id="container">
+<!-- navbar  추가  -->
+<nav id="navbar">
+    <!-- 5개의 메뉴생성 -->
+      <ul>
+        <li class="nav-item logo"><a href="index.html"><img src="images/logo.jpg" alt="로고입니다." ></a></li>
+        <li class="nav-item"> <a href="personal.html">개인</a></li>
+        <li class="nav-item"><a href="busines.html">기업</a></li>
+        <li class="nav-item"><a href="login.html">로그인</a></li>
+        <li class="nav-item"><a href="register.html">회원가입</a></li>
+       
+      </ul>
+    </nav>
+    
+    <div id="banner">지금 당신의 행복! IT's KOSTA Life!</div> 
+    
+  <div id="register">
+	  <h1>Register</h1>
+	  <form action="" method="post">
+	  <div class="form-item">
+	    <label for="name">이름</label>
+	    <input type="text" id="name" name="id">
+	 </div>
+	    
+	   <div class="form-item">
+	    <label for="email">이메일</label>
+	    <input type="email" id="email" name="email">
+	  </div>
+	  
+	   <div class="form-item">
+	    <label for="phone">연락처</label>
+	    <input type="text" id="phone" name="phone">
+	   </div>
+	   
+	    <div class="form-item">
+		    <label for="password">비밀번호</label>
+		    <input type="password" id="password" name="password">
+	    </div>
+	    
+	   <div class="form-item">
+		    <label for="password2">비밀번호 확인</label>
+		    <input type="password" id="password2" name="password2">
+	    </div>
+	    
+	    <hr>
+	    <div class="a"><button>회원 가입</button></div>
+	  </form>
+	  
+ </div> 
+ 
+  <!--footer영역 -->
+  <footer>
+	<ul>
+	  <li>경기도 오리역 한국소프트웨어진흥협회</li>
+	  <li>02-0000-0000</li>
+	</ul>
+  </footer>
+    
+  
+    </div>
+ </body>
+</html>

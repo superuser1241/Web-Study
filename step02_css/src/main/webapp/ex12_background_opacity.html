@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+	body{
+		height: 100vh;
+		position: relative;
+		z-index: 10;
+	}
+	
+	/* body영역의 background-image에 opcacity를 적용하기 위해서는 가상의 요소를 추가하여
+	추가된 요소에 background-image를 올리고 opcacity를 적용해야한다 */
+	
+	/* ::after는 css로 가상의 요소를 추가한다 */
+	body::after {
+	content: "";
+	position: absolute;
+	top: 0px; left: 0px;
+	width: 100%; height: 100%;
+	background: url("image/icon.png") no-repeat center;
+	opacity: 0.3;
+	z-index: -1;
+}
+</style>
+</head>
+<body>
+<h3>빨리쉬어요빨리쉬어요빨리쉬어요빨리쉬어요빨리쉬어요</h3>
+<h3>빨리쉬어요빨리쉬어요빨리쉬어요빨리쉬어요빨리쉬어요</h3>
+<h3>빨리쉬어요빨리쉬어요빨리쉬어요빨리쉬어요빨리쉬어요</h3>
+<h3>빨리쉬어요빨리쉬어요빨리쉬어요빨리쉬어요빨리쉬어요</h3>
+<h3>빨리쉬어요빨리쉬어요빨리쉬어요빨리쉬어요빨리쉬어요</h3>
+<h3>빨리쉬어요빨리쉬어요빨리쉬어요빨리쉬어요빨리쉬어요</h3>
+<h3>빨리쉬어요빨리쉬어요빨리쉬어요빨리쉬어요빨리쉬어요</h3>
+<h3>빨리쉬어요빨리쉬어요빨리쉬어요빨리쉬어요빨리쉬어요</h3>
+<h3>빨리쉬어요빨리쉬어요빨리쉬어요빨리쉬어요빨리쉬어요</h3>
+</body>
+</html>

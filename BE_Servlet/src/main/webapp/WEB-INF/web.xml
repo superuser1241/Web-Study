@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>BE_Servlet</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+  <!-- Servlet 등록 lifeCycle = new LifeCycleServlet(); 
+  		load-on-startup 옵션은 was가 시작될 때 미리 메모리에 생성한다 
+	-->
+	<servlet>
+		<servlet-name>lifeCycle</servlet-name>
+		<servlet-class>ex0920_Servlet.LifeCycleServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>lifeCycle</servlet-name>
+		<url-pattern>/life</url-pattern>
+	</servlet-mapping>
+</web-app>

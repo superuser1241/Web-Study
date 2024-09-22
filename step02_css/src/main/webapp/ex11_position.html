@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+	.main{
+		width: 500px; height: 400px; background-color: pink;
+		overflow: auto;
+	}
+	div div{
+		width: 80px; height: 80px;
+		align-content: center;
+		text-align: center;
+	}
+	.a{
+		background-color: red;
+		position: relative;
+		inset: 10px 20px;  /* top, left, right, bottom */
+		z-index: 11;
+	}
+	.b{
+		background-color: green;
+		top: 50px; left: 40px;
+		/*position: relative;*/ /* 기준점이 원래 놓여야 할 위치에서 부터 이동, 다음에 놓이는 element는 relative를 지정한 요소가 원래 놓이는 위치에 있음 */
+		position: absolute; /* 부모노드의 시작점 0,0위치에서 부터 이동, 다음에 놓이는 element에 영향을 주지않는다 */
+		/*position: fixed;*/ /* 스크롤을 내려도 그 위치로 고정시킴 */ 
+		z-index: 10;  /* 기본 값이 1이고 숫자가 높을수록 위에 배치된다 */
+	}
+	.c{
+		background-color: blue;
+		z-index: 12; 
+	}
+	
+</style>
+</head>
+<body>
+	<div class="main">
+		<div class="a">a</div>
+		<div class="b">b</div>
+		<div class="c">c</div>
+		<h3>안녕하세요</h3><h3>안녕하세요</h3><h3>안녕하세요</h3><h3>안녕하세요</h3><h3>안녕하세요</h3><h3>안녕하세요</h3><h3>안녕하세요</h3><h3>안녕하세요</h3><h3>안녕하세요</h3><h3>안녕하세요</h3><h3>안녕하세요</h3><h3>안녕하세요</h3><h3>안녕하세요</h3><h3>안녕하세요</h3><h3>안녕하세요</h3><h3>안녕하세요</h3><h3>안녕하세요</h3>
+	</div>
+</body>
+</html>
