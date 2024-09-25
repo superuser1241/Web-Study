@@ -13,6 +13,7 @@ public class LifeCycleServlet extends HttpServlet {
 	public LifeCycleServlet() {
 		System.out.println("LifeCycleServlet 생성자.....");
 	}
+	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("LifeCycleServlet doGet 요청.....");
@@ -29,12 +30,12 @@ public class LifeCycleServlet extends HttpServlet {
 		out.println("</html>");
 		
 	}
-
+	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("LifeCycleServlet doPost 요청.....");
 	}
-
+	
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("LifeCycleServlet service 요청.....");
@@ -48,12 +49,12 @@ public class LifeCycleServlet extends HttpServlet {
 		System.out.println("userName = "+userName);
 		System.out.println("userPwd = "+userPwd);
 	}
-
+	
 	@Override
 	public void destroy() {
 		System.out.println("LifeCycleServlet destroy 요청.....");
 	}
-
+	
 	@Override
 	public void init() throws ServletException {
 		System.out.println("LifeCycleServlet init 요청.....");
