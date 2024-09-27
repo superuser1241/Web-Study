@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -55,11 +56,12 @@ ${bean.map}<hr>
 <fieldset>
 <legend>map</legend>
 	<c:forEach items="${bean.map }" var="nation" varStatus="state">
-		<input type="radio" name="map">${nation.key }
+		<input type="radio" value="${nation.value }">${nation.key }
 	</c:forEach>
 </fieldset>
 
-
-
+<hr>
+가격 : 1567879456원 /
+<fmt:formatNumber value="1567879456"/>원
 </body>
 </html>

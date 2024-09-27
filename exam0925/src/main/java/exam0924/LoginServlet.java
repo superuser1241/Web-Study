@@ -1,14 +1,12 @@
 package exam0924;
 
+import java.io.IOException;
+
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-
-import java.io.IOException;
-import java.io.PrintWriter;
 
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -36,13 +34,9 @@ public class LoginServlet extends HttpServlet {
 			response.sendRedirect("LoginOk.jsp");
 		}
 		else {
-			response.setContentType("text/html;charset=UTF-8");
+			request.setAttribute("errMsg", name+"님 정보를 찾을 수 없습니다");
 			
-			PrintWriter out = response.getWriter();
-			out.println("<script>");
-			out.println("alert('로그인 정보가 틀립니다 다시 로그인해주세요')");
-			out.println("history.back()");
-			out.println("</script>");
+			request.getRequestDispatcher("error/error.jsp").forward(request, response);
 		}
 	}
 

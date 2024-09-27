@@ -8,10 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-    
-    <c:choose>
-    	<c:when test="${not empty userId }">
-    		${userId }님 로그인중<br>
+    		${userId }<br>
+    		${userName }님 로그인중<br>
     		접속 시간: ${time}<br>
     		
     		<img src="https://picsum.photos/250/250"/><br>
@@ -20,11 +18,5 @@
                 <input type="submit" value="로그아웃" />
             </form>
             
-    	</c:when>
-    	
-    	<c:otherwise>
-    		<c:redirect url="LoginForm.html"></c:redirect>
-    	</c:otherwise>
-    </c:choose>
 </body>
 </html>

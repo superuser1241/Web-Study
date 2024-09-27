@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" id="WebApp_ID" version="6.0">
+  <display-name>step06_initParam</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+  
+  <!-- 모든 서블릿이 공유하게될 init 설정 -->
+  <context-param>
+  		<param-name>info</param-name>
+  		<param-value>집에가고싶다</param-value>
+  </context-param>
+  <servlet>
+    <display-name>InitParamTestServlet</display-name>
+    <servlet-name>InitParamTestServlet</servlet-name>
+    <servlet-class>ex0926.servlet.InitParamTestServlet</servlet-class>
+    <init-param>
+    	<param-name>id</param-name>
+    	<param-value>young</param-value>
+    </init-param>
+    <init-param>
+    	<param-name>pwd</param-name>
+    	<param-value>1234</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>InitParamTestServlet</servlet-name>
+    <url-pattern>/a</url-pattern>
+  </servlet-mapping>
+</web-app>

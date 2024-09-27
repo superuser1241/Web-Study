@@ -10,7 +10,6 @@
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
   <servlet>
-    <description></description>
     <display-name>LoginServlet</display-name>
     <servlet-name>LoginServlet</servlet-name>
     <servlet-class>exam0924.LoginServlet</servlet-class>
@@ -20,7 +19,6 @@
     <url-pattern>/LoginServlet</url-pattern>
   </servlet-mapping>
   <servlet>
-    <description></description>
     <display-name>LogoutServlet</display-name>
     <servlet-name>LogoutServlet</servlet-name>
     <servlet-class>exam0924.LogoutServlet</servlet-class>
