@@ -36,10 +36,8 @@ public class MemberInsertServlet extends HttpServlet {
 			int re;
 			if(dao.getSelectById(id)!=null) {
 				request.setAttribute("errMsg", "아이디가 중복입니다.");
-	            RequestDispatcher dispatcher = request.getRequestDispatcher("error.jsp");
-	            dispatcher.forward(request, response);
+	            request.getRequestDispatcher("error.jsp").forward(request, response);
 				return;
-				
 			}else {
 				re = dao.insert(member);
 			}

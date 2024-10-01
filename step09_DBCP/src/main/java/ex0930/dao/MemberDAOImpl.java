@@ -144,7 +144,7 @@ public List<MemberDTO> selectAll() throws SQLException{
 		try {
 			con = DBManager.getConnection();
 	        ps = con.prepareStatement(sql);
-	        ps.setString(1, keyWord);
+	        ps.setString(1, "%"+keyWord+"%");
 	        rs = ps.executeQuery();
 	        
 	        while (rs.next()) {
