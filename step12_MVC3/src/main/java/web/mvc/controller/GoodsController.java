@@ -22,7 +22,7 @@ public class GoodsController implements Controller {
 		
 		request.setAttribute("goodsList", Arrays.asList("새우깡","감자깡","콘칩"));
 		
-		return new ModelAndView("goods/list.jsp",true);
+		return new ModelAndView("goods/list.jsp");
 	}
 	
 	/**

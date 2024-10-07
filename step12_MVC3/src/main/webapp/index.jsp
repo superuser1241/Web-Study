@@ -29,6 +29,12 @@
     <a href="${path}/front?key=board&methodName=list">게시판 LIST</a><p>
     <a href="${path}/front?key=board&methodName=read">상세보기</a><p>
  </h3>
+ 
+ <a href="${path}/front?key=cart&methodName=insert">장바구니등록</a>
+ <a href="${path}/front?key=cart&methodName=select">장바구니조회</a>
+
+ <a href="${path}/front?key=order&methodName=selectAll">주문조회</a>
+ <a href="${path}/front?key=order&methodName=insert">주문등록</a>
 
 
 </body>
