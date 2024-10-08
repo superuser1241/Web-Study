@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		//a태그를 클릭하면 서버(jsonplace 가상데이터)에 데이터를 요청해서 결과를 div에 출력
+		$("#send").click(function(){
+			$.ajax({
+				url: "https://jsonplaceholder.typicode.com/users", //통신할 서버 주소
+				type: "get", //요청방식(GET, POST , PUT, DELETE, PETCH)
+				dataType: "json", //서버가 응답해주는 데이터 타입(text, html, xml, json)
+				//data: "name=영준&id=Young", //서버에게 전송할 데이터(param정보)
+				//data: {name: "나영", id: "king"},
+				//data: {name: $("#name").val(), id: $("#id").val() }
+				//data: $("#f").serialize(),
+				//여기서는 데이터 넘기는게 없기 때문에 data는 필요없음
+				success: function(result) {
+					//console.log(result);
+					$.each(result, function(index, item){
+						 console.log(index + "=" + item.name + "|" + item.email + "|" + item.address.street);
+					});
+				}, //성공했을 때 콜백함수
+				error: function(err) {
+					
+				}//실패했을 때 콜백함수
+			})
+		});
+	});
+</script>
+</head>
+<body>
+	<h3>https://jsonplaceholder.typicode.com/</h3>
+		<a href="#" id="send">데이터 가져오기</a>
+	<hr>
+	<div id="result"></div>
+</body>
+</html>

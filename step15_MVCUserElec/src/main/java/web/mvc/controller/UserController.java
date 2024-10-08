@@ -37,7 +37,7 @@ public class UserController implements Controller {
 			HttpSession session = request.getSession();
 			session.setAttribute("loginUser", user);
 			
-			return new ModelAndView("index.jsp");
+			return new ModelAndView("index.jsp", true);
 		} else {
 			request.setAttribute("errorMsg", "아이디 또는 비밀번호가 잘못되었습니다.");
 			return new ModelAndView("error/error.jsp");

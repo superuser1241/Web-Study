@@ -17,7 +17,7 @@ public interface FavoriteDAO {
 	List<Product> getFavoritesByUser(String userId) throws SQLException;
 	
 	/**
-	 * 	찜 목록에서 삭제
+	 * 	찜 목록에서 삭제	
 	 * */
 	int deleteFavorite(String favoriteId) throws SQLException;
 }

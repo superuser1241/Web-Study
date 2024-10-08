@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		//버튼을 클릭하면 서버에 데이터를 요청해서 결과를 div에 출력
+		$("#btn").click(function(){
+			$.ajax({
+				url: "ajaxCheck", //통신할 서버 주소
+				type: "get", //요청방식(GET, POST , PUT, DELETE, PETCH)
+				dataType: "text", //서버가 응답해주는 데이터 타입(text, html, xml, json)
+				//data: "name=영준&id=Young", //서버에게 전송할 데이터(param정보)
+				//data: {name: "나영", id: "king"},
+				//data: {name: $("#name").val(), id: $("#id").val() }
+				data: $("#f").serialize(),
+				success: function(result) {
+					$("#result").html(result);
+				}, //성공했을 때 콜백함수
+				error: function(err) {
+					
+				}//실패했을 때 콜백함수
+			})
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>비동기 통신 : jQuery가 제공하는 ajax함수 알아보기</h1>
+	<form id="f">
+		이름: <input type="text" id="name" name="name"><br>
+		아이디: <input type="text" id="id" name="id"><br>
+		<button id="btn" type="button">클릭</button>  <!-- 기본타입이 submit이기 때문에 새로고침이 되면 안되므로 type="button"으로 설정 -->
+	</form>
+	
+	<hr>
+	<div id="result"></div>
+</body>
+</html>
