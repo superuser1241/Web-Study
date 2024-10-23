@@ -23,25 +23,132 @@
 		/*
 		  1) 전체검색
 		*/
+		function customerList() {
+		    $.ajax({
+		        url: 'ajax',
+		        method: 'POST',
+		        data: {
+		            key: 'customer',
+		            methodName: 'selectAll'
+		        },
+		        dataType: "json",
+		        success: function(result) {
+		        	let tb="";
+		            $.each(result, function(index, customer) {
+		                tb += '<tr>';
+		                tb += '<td>' + (index + 1) + '</td>';
+		                tb += '<td><a href="#" class="customer-id" data-id="' + customer.id + '">' + customer.id + '</a></td>';
+		                tb += '<td>' + customer.name + '</td>';
+		                tb += '<td>' + customer.age + '</td>';
+		                tb += '<td>' + customer.tel + '</td>';
+		                tb += '<td>' + customer.addr + '</td>';
+		                tb += '<td><button class="delete-btn" data-id="' + customer.id + '">삭제</button></td>';
+		                tb += '</tr>';
+		            });
+		            
+		            $("#listTable tr:gt(0)").remove();
+		            $("#listTable tr:eq(0)").after(tb);
+		        }
+		    });
+		}
 		
 	   /*
 	    2) 아이디중복체크
 	   */
-	   
+	   $("#id").keyup(function(){		   
+			let id = $("#id").val();
+			$.ajax({
+				url:'ajax',
+				method: 'POST',
+				data: {
+					key:'customer',
+					methodName:'idCheck',
+					id: id
+				},
+				dataType: "text",
+				success: function(result){
+					$("span").text(result);
+				},
+				error: function(err) {
+					$("span").text(err);
+				}
+			})
+		})
 		/**
 	     3) 가입하기 또는 수정하기 
 	   */
-	   
+	   $("#btn").click(function() {
+			let customer = $("#inForm").serialize();
+			$.ajax({
+				url: 'ajax',
+				method: 'POST',
+				data: customer,
+				success: function(result) {
+					alert("회원등록 완료");
+					customerList();
+				},
+				error: function(err) {
+					alert("회원등록 오류");
+				}
+			});
+		});
 		/*
 		 4) 아이디를 클릭했을때  
 		*/
 		
+		/*$(document).on("click", ".customer-id", function(event) {
+		        event.preventDefault();
+		        let id = $(this).data("id");
+
+		        $.ajax({
+		            url: 'ajax',
+		            method: 'POST',
+		            data: {
+		                key: 'customer',
+		                methodName: 'update',
+		                id: id
+		            },
+		            dataType: "json",
+		            success: function(customer) {
+		                $("#id").val(customer.id).prop("readonly", true);
+		                $("#name").val(customer.name);
+		                $("#age").val(customer.age);
+		                $("#tel").val(customer.tel);
+		                $("#addr").val(customer.addr);
+		                
+		                $("#btn").val("수정하기");
+		            },
+		            error: function(err) {
+		                alert("고객 정보 조회 오류");
+		            }
+		        });
+		    });*/
+		    
 		/*
 	     5) 삭제하기
 	   */
-	   
-	   
+	   $(document).on("click", ".delete-btn", function() {
+	        let id = $(this).data("id");
+	        $.ajax({
+	            url: 'ajax',
+	            method: 'POST',
+	            data: {
+	                key: 'customer',
+	                methodName: 'delete',
+	                id: id
+	            },
+	            success: function(result) {
+	                alert("회원삭제 완료");
+	                customerList();
+	            },
+	            error: function(err) {
+	                alert("회원삭제 오류");
+	            }
+	        });	
+	    });
+	   customerList();
 	});//ready끝
+	
 
 </script>
 

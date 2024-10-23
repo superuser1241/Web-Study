@@ -29,10 +29,15 @@
     -->
     
     <!-- DBCP기술 연결 -->
-    <Resource name="jdbc/myoracle" auth="Container"
-              type="javax.sql.DataSource" driverClassName="oracle.jdbc.OracleDriver"
+    <Resource name="jdbc/myoracle" 
+              auth="Container"
+              type="javax.sql.DataSource" 
+              driverClassName="oracle.jdbc.OracleDriver"
               url="jdbc:oracle:thin:@127.0.0.1:1521:xe"
-              username="JUN" password="1234" maxTotal="20" maxIdle="10"
+              username="c##exam" 
+              password="1234" 
+              maxTotal="20" 
+              maxIdle="10"
               maxWaitMillis="-1"/>
               
     

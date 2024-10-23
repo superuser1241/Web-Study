@@ -34,7 +34,15 @@ public class CustomerController implements RestController {
 	 * */
 	public void idCheck(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		String id = request.getParameter("id");
+		boolean idCheck = customerService.idCheck(id);
 		
+		PrintWriter out = response.getWriter();
+		if(idCheck) {
+			out.println("중복입니다");
+		}else {
+			out.println("사용 가능합니다");
+		}
 	}
 	
 	
@@ -45,8 +53,17 @@ public class CustomerController implements RestController {
 	 * */
 	public void insert(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-	
+		String id = request.getParameter("id");
+		String name = request.getParameter("name");
+		int age = Integer.parseInt(request.getParameter("age"));
+		String tel = request.getParameter("tel");
+		String addr = request.getParameter("addr");
+		
+		CustomerDTO customer = new CustomerDTO(id,name,age,tel,addr);
+		int result = customerService.insert(customer);
+		
+		PrintWriter out = response.getWriter();
+		out.println(result);
 	}
 	
 	/**
@@ -55,8 +72,13 @@ public class CustomerController implements RestController {
 	 * */
 	public void selectAll(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		List<CustomerDTO> customer = customerService.selectAll();
 		
+		Gson gson = new Gson();
+		String jsonArr = gson.toJson(customer);
 		
+		PrintWriter out = response.getWriter();
+		out.println(jsonArr);
 	}
 	
 	/**
@@ -65,7 +87,17 @@ public class CustomerController implements RestController {
 	 * */
 	public void update(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		String id = request.getParameter("id");
+		String name = request.getParameter("name");
+		int age = Integer.parseInt(request.getParameter("age"));
+		String tel = request.getParameter("tel");
+		String addr = request.getParameter("addr");
 		
+		CustomerDTO customer = new CustomerDTO(id,name,age,tel,addr);
+		int result = customerService.update(customer);
+		
+		PrintWriter out = response.getWriter();
+		out.println(result);
 		
 	}
 	
@@ -75,7 +107,11 @@ public class CustomerController implements RestController {
 	 * */
 	public void delete(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		String id = request.getParameter("id");
+		int result = customerService.delete(id);
 		
+		PrintWriter out = response.getWriter();
+		out.println(result);
 	}
 
 }

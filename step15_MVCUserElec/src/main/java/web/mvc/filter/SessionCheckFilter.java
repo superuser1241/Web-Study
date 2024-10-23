@@ -14,8 +14,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import web.mvc.controller.ModelAndView;
 
-//@WebFilter("/select")
-//@WebFilter("/front?key=elec&methodName=select")
 @WebFilter("/front")
 public class SessionCheckFilter extends HttpFilter implements Filter {
        
